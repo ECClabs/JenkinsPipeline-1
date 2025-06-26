@@ -20,7 +20,7 @@ sudo yum makecache -y
 sudo yum install java-17-amazon-corretto -y
 
 
-sudo yum install jenkins-2.452.2 -y
+sudo yum install jenkins-2.452.2 -y #test
 
 echo "✅ Jenkins 2.452.2 installation complete!"
 echo "🌐 Access it at: http://<your-elastic-ip>:8080"
