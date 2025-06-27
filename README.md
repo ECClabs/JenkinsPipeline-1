@@ -32,6 +32,5 @@ else
   echo "    ./install_jenkins.sh"
   echo "3️⃣ If the error still comes, restart the EC2 instance and try again."
   echo "4️⃣ Make sure you are connected to the internet inside the EC2 instance."
-  echo ""
-  echo "📣 If it still fails after retrying, contact your lab instructor or admin for help."
+  
 fi
