@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Installing Jenkins 2.452.2 and Java 17... Please wait."
 
 {
   sudo tee /etc/yum.repos.d/jenkins.repo > /dev/null <<EOF
@@ -22,12 +21,17 @@ EOF
 } &> /dev/null
 
 if [ $? -eq 0 ]; then
-  echo "✅ Jenkins 2.452.2 and Java 17 installed successfully!"
+  echo " Jenkins and Java installed successfully!"
 else
-  echo "❌ Installation failed. Please try the following:"
-  echo "1️⃣ Check internet connectivity inside the EC2 instance."
-  echo "2️⃣ Make sure this URL is accessible:"
-  echo "    https://pkg.jenkins.io/redhat-stable"
-  echo "3️⃣ Run the script again: ./install_jenkins.sh"
-  echo "4️⃣ If it still fails, contact your lab instructor or admin."
+  echo "❌ Installation failed."
+  echo ""
+  echo "👉 Try the following steps to resolve:"
+  echo "1️⃣ Run the command below to clean cached files (optional, only if script fails again):"
+  echo "    sudo yum clean all && sudo yum makecache"
+  echo "2️⃣ Then re-run the script:"
+  echo "    ./install_jenkins.sh"
+  echo "3️⃣ If the error still comes, restart the EC2 instance and try again."
+  echo "4️⃣ Make sure you are connected to the internet inside the EC2 instance."
+  echo ""
+  echo "📣 If it still fails after retrying, contact your lab instructor or admin for help."
 fi
